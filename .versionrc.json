@@ -1,0 +1,16 @@
+{
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "chore", "hidden": true },
+    { "type": "docs", "hidden": true },
+    { "type": "style", "hidden": true },
+    { "type": "refactor", "hidden": true },
+    { "type": "perf", "hidden": true },
+    { "type": "test", "hidden": true }
+  ],
+  "commitUrlFormat": "https://github.com/andikas95-dev/boilerplate-react-mui/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/andikas95-dev/boilerplate-react-mui/compare/{{previousTag}}...{{currentTag}}",
+  "NAME": "Boilerplate React MUI",
+  "VERSION": "1.0.0"
+}
