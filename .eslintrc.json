@@ -1,30 +1,109 @@
 {
+  "root": true,
   "env": {
     "browser": true,
-    "es2021": true
+    "node": true,
+    "es6": true
   },
   "extends": [
+    // "plugin:react/recommended",
+    // "airbnb",
+    // "airbnb-typescript",
+    // "eslint:recommended",
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended",
+    // "prettier",
+    // "prettier/react"
+    "react-app",
     "plugin:react/recommended",
     "airbnb",
-    "react-app",
-    "react-app/jest"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    // "project": ["./tsconfig.json"],
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "module-resolver", "prettier", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
+    }
+  },
   "rules": {
-    //script from material UI
     "no-restricted-imports": [
       "error",
       {
+        //script from material UI
         "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"]
       }
-    ]
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["routers", "helpers", "pages", "layouts"]
+      }
+    ],
+    // "react/jsx-filename-extension": [
+    //   2,
+    //   { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    // ],
+    // "react/react-in-jsx-scope": "off",
+    // "react/jsx-props-no-spreading": "off"
+    // ISSUE: https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    // ---
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "varsIgnorePattern": "set",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "prettier/prettier": "error",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "semi": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "react/no-danger": "off",
+    "camelcase": "off",
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/state-in-constructor": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prefer-stateless-function": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-filename-extension": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-fragments": [2, "element"],
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
