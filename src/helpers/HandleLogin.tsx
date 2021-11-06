@@ -1,21 +1,21 @@
-import { useLocalStorage } from 'react-use';
+import { useLocalStorage } from 'react-use'
 
-const TOKEN_KEY = 'jwt';
+const TOKEN_KEY = 'jwt'
 
-const [storageVal, setStorageVal, storageRemove] = useLocalStorage(TOKEN_KEY);
+const [storageVal, setStorageVal, storageRemove] = useLocalStorage(TOKEN_KEY)
 
 export const login = (data: string) => {
-  setStorageVal(data);
-};
+  setStorageVal(data)
+}
 
 export const logout = () => {
-  storageRemove();
-};
+  storageRemove()
+}
 
 export const isLogin = () => {
   if (storageVal) {
-    return true;
+    return true
   }
 
-  return false;
-};
+  return false
+}
